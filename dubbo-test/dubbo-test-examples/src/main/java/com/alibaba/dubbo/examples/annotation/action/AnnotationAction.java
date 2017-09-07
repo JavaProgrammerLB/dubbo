@@ -25,7 +25,7 @@ import org.springframework.stereotype.Component;
  *
  * @author william.liangf
  */
-@Component("annotationAction")
+//@Component("annotationAction")
 public class AnnotationAction {
 
     @Reference

@@ -17,6 +17,7 @@ package com.alibaba.dubbo.examples.annotation;
 
 import com.alibaba.dubbo.examples.annotation.action.AnnotationAction;
 
+import com.alibaba.dubbo.examples.annotation.api.AnnotationService;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -37,8 +38,10 @@ public class AnnotationTest {
             ClassPathXmlApplicationContext consumerContext = new ClassPathXmlApplicationContext(AnnotationTest.class.getPackage().getName().replace('.', '/') + "/annotation-consumer.xml");
             consumerContext.start();
             try {
-                AnnotationAction annotationAction = (AnnotationAction) consumerContext.getBean("annotationAction");
-                String hello = annotationAction.doSayHello("world");
+//                AnnotationAction annotationAction = (AnnotationAction) consumerContext.getBean("annotationAction");
+//                String hello = annotationAction.doSayHello("world");
+                AnnotationService annotationService = (AnnotationService) consumerContext.getBean("annotationService");
+                String hello = annotationService.sayHello("world");
                 assertEquals("annotation: hello, world", hello);
             } finally {
                 consumerContext.stop();

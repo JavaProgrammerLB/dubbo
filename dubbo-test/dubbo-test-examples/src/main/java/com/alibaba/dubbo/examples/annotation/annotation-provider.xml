@@ -26,6 +26,10 @@
 
     <dubbo:protocol name="dubbo" port="20880"/>
 
-    <dubbo:annotation package="com.alibaba.dubbo.examples.annotation.impl"/>
+    <!--<dubbo:annotation package="com.alibaba.dubbo.examples.annotation.impl"/>-->
+    <bean id="annotationService" class="com.alibaba.dubbo.examples.annotation.impl.AnnotationServiceImpl"/>
+
+    <dubbo:service interface="com.alibaba.dubbo.examples.annotation.api.AnnotationService" ref="annotationService"
+                   validation="true"/>
 
 </beans>

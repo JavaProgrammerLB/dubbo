@@ -51,6 +51,7 @@
         <module>dubbo-simple</module>
         <module>dubbo-admin</module>
         <module>dubbo-demo</module>
+      <module>liubei-palyground</module>
     </modules>
     <profiles>
         <profile>
